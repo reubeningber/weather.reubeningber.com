@@ -41,11 +41,12 @@ function loadWeather(cityCoords) {
             // Current Summary
             $('#currentSummary').html(json.currently.summary);
 
-            if  (json.currently.icon == 'rain') {
-                $('#currentRain').html('Yes!')
-            } else {
-                $('#currentRain').html('No!')
-            }
+            // Check for Rain
+            // if  (json.currently.icon == 'rain') {
+            //     $('#currentRain').html('Yes!')
+            // } else {
+            //     $('#currentRain').html('No!')
+            // }
         },
         error: function(e) {
             console.log(e.message);
