@@ -2,42 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Good Weather | A Project by Reuben A. Ingber </title>
+    <title>F*ck the Rain | A Project by Reuben A. Ingber </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="images/icon.png"/>  
     <meta name="apple-mobile-web-app-capable" content="yes" />  
 
-
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     
 </head>
 <body>
 <div data-role="page">
 
-    <div data-role="panel" id="mypanel">
-        <!-- panel content goes here -->
+    <div data-role="panel" id="left-panel">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+            <li data-role="list-divider">Select A City</li>
+            <li><a href="#" class="city" data-rel="close">Current Location</a></li>
+            <li><a href="#" class="city" data-rel="close">New York</a></li>
+            <li><a href="#" class="city" data-rel="close">California</a></li>
+            <li><a href="#" class="city" data-rel="close">London</a></li>
+            <li><a href="#" class="city" data-rel="close">Tel Aviv</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+    <div data-role="panel" data-position="right" id="right-panel">
+        <h2>Credits</h2>
+        <p>A Project by <a href="http://reubeningber.com">Reuben A. Ingber</a></p>
+
+        <p>Built using jQuery Mobile and the Forecast API</p>
+        <p>The code for this site can be found on github.</p>
+
+        <hr>
+
+        <p>Reuben Ingber is front-end developer, designer, podcast host and runner. He can be found on twitter @<a href="http://twitter.com/reubeningber">reubeningber</a>.</p>
     </div><!-- /panel -->
 
     <!-- header -->
-    <header data-role="header" data-position="fixed" data-theme="b">
+    <header data-role="header" data-position="fixed">
             <h1>F*ck The Rain!</h1>
-            <a href="#" data-icon="bars" data-role="button" data-iconpos="notext">Menu</a>
+            <a href="#left-panel" data-icon="bars" data-role="button" data-iconpos="notext">Menu</a>
+            <a href="#right-panel" data-icon="star" data-role="button" data-iconpos="notext">Credits</a>
     </header>
     <!-- content -->
-    <div data-role="contnet">
-    <h1>65&#186;F</h1>
-    <p>Partly Cloudy</p>
-    <p>Current Location</p>
+    <div data-role="content" class="weather-panel">
+    <h1 id="currentTemp" class="icon" data-icon="B">65&#186;F</h1>
+    <p id="currentSummary">Partly Cloudy</p>
+    <p id="currentLocation">Current Location</p>
         
     </div>
-    <!-- footer -->
-    <footer data-role"footer">
-        
-    </footer>
 </div><!-- page -->  
 </body>
 </html>
