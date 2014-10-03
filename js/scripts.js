@@ -21,16 +21,16 @@ var cities = {
 };
 
 var weatherGif = {
-    'clear-day' : 'images/gif/clear-day.gif'
+    'clear-day' : 'images/gif/clear-day.gif',
     'clear-night' : 'images/gif/clear-night.gif',
     'rain' : 'images/gif/rain.gif'
-    // 'snow' : 'G',
-    // "sleet" : "X", 
-    // "wind" : "S", 
-    // "fog" :"N", 
-    // "cloudy" : "Y",
-    // "partly-cloudy-day" : "H", 
-    // "partly-cloudy-night" : "I"
+    'snow' : 'images/gif/snow.gif',
+    "sleet" : "images/gif/sleet.gif", 
+    "wind" : "images/gif/wind.gif", 
+    "fog" :"images/gif/fog.gif", 
+    "cloudy" : "images/gif/cloudy.gif",
+    "partly-cloudy-day" : "images/gif/cloudy-2.gif", 
+    "partly-cloudy-night" : "images/gif/cloudy-night.gif"
 };
 
 function loadWeather(cityCoords) {
@@ -45,6 +45,9 @@ function loadWeather(cityCoords) {
         dataType: 'jsonp',
         success: function(json) {
             
+            // Current GIF
+            $('#currentGif').attr('src', weatherGif[json.currently.icon]);
+
             // Current Temp
             $('#currentTemp').html(Math.round(json.currently.temperature) + '&#186;F');
             
@@ -54,8 +57,6 @@ function loadWeather(cityCoords) {
             // Current Summary
             $('#currentSummary').html(json.currently.summary);
 
-            // Current GIF
-            $('#currentGif').attr('src', weatherGif[json.currently.icon]);
 
 
             // Check for Rain
