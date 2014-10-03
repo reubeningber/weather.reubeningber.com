@@ -23,7 +23,7 @@ var cities = {
 var weatherGif = {
     'clear-day' : 'images/gif/clear-day.gif',
     'clear-night' : 'images/gif/clear-night.gif',
-    'rain' : 'images/gif/rain.gif'
+    'rain' : 'images/gif/rain.gif',
     'snow' : 'images/gif/snow.gif',
     "sleet" : "images/gif/sleet.gif", 
     "wind" : "images/gif/wind.gif", 
