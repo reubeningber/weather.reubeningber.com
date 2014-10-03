@@ -20,6 +20,19 @@ var cities = {
     "current location" : ""
 };
 
+var weatherGif = {
+    'clear-day' : 'images/gif/clear-day.gif'
+    'clear-night' : 'images/gif/clear-night.gif',
+    'rain' : 'images/gif/rain.gif'
+    // 'snow' : 'G',
+    // "sleet" : "X", 
+    // "wind" : "S", 
+    // "fog" :"N", 
+    // "cloudy" : "Y",
+    // "partly-cloudy-day" : "H", 
+    // "partly-cloudy-night" : "I"
+};
+
 function loadWeather(cityCoords) {
 
     var latlng = cityCoords.coords.latitude + ',' + cityCoords.coords.longitude, 
@@ -40,6 +53,10 @@ function loadWeather(cityCoords) {
 
             // Current Summary
             $('#currentSummary').html(json.currently.summary);
+
+            // Current GIF
+            $('#currentGif').attr('src', weatherGif[json.currently.icon]);
+
 
             // Check for Rain
             // if  (json.currently.icon == 'rain') {
